@@ -1,8 +1,9 @@
 name: test commit
 
 on:
-  branches:
-    [!master]
+  push:
+    branches-ignore: 
+      - master
     
 jobs:
   commit-and-push:
