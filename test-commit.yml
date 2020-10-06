@@ -1,0 +1,20 @@
+name: test commit
+
+on:
+  branches:
+    [!master]
+    
+jobs:
+  commit-and-push:
+    runs-on: ubunut-latest
+    jobs:
+      - name: checkout repo
+        uses: actions/checkout@v2
+      - name: create new file
+        run: echo "a new file" >> newfile.txt
+      - name: add new file
+        run: git add newfile.txt
+      - name: commit new file
+        run: git commit -m 'some robot commited this'
+      - name: push new file
+        run: git push
