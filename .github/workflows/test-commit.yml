@@ -8,7 +8,7 @@ on:
 jobs:
   commit-and-push:
     runs-on: ubunut-latest
-    jobs:
+    steps:
       - name: checkout repo
         uses: actions/checkout@v2
       - name: create new file
